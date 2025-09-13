@@ -1,1 +1,1 @@
-STATUS DA ATIVIDADE: incompleta.
+STATUS DA ATIVIDADE: sendo feita
