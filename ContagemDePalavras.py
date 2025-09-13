@@ -5,15 +5,15 @@
 
 texto = input("Digite um texto: ")
 palavras = texto.split()
-
 quantidadePalavras = len(palavras)
-
 maisLonga = palavras[0]
+
 for p in palavras:
     if len(p) > len(maisLonga):
         maisLonga = p
 
 contagem = {}
+
 for p in palavras:
     if p in contagem:
         contagem[p] += 1
@@ -22,6 +22,7 @@ for p in palavras:
 
 maisAparece = None
 maiorCcontagem = 0
+
 for p in contagem:
     if contagem[p] > maiorContagem:
         maiorContagem = contagem[p]
