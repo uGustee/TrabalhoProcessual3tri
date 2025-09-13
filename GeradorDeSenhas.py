@@ -1,13 +1,23 @@
+# Q3: Escreva um programa que gere uma senha aleatória de 20 caracteres misturando letras, números e símbolos, porém com uma regra: No meio da senha, o seu nome deverá aparecer.
+
 import random
 import string
 
-nome = input("Digite seu nome: ")
+meuNome = "gustavo"
+todos = string.ascii_letters + string.digits + string.punctuation
+tamanhoTotal = 20
+parteAleatoria_len = tamanhoTotal - len(meuNome)
 
-caracteres = string.ascii_letters + string.digits + string.punctuation
+if parteAleatoria_len < 0:
+    print("O nome fixo é maior que 20 caracteres. Ajuste o nome ou o tamanho.")
+    
+else:
+    parteAleatoria = ""
+    
+    for _ in range(parteAleatoria_len):
+        parteAleatoria += random.choice(todos)
 
-senha_base = ''.join(random.choice(caracteres) for _ in range(20 - len(nome)))
+    pos = random.randint(0, parteAleatoria_len)
+    senha = parteAleatoria[:pos] + meuNome + parteAleatoria[pos:]
 
-pos = random.randint(0, len(senha_base))
-senha = senha_base[:pos] + nome + senha_base[pos:]
-
-print("Senha gerada:", senha)
+    print("Senha gerada:", senha)
