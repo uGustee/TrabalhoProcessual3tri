@@ -1,1 +1,1 @@
-STATUS DA ATIVIDADE: sendo feita
+STATUS DA ATIVIDADE: finalizada.
