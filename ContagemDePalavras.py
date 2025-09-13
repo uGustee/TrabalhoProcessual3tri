@@ -1,14 +1,32 @@
+# Q1: O usuário digita um texto e o programa deve:
+  # - Contar quantas palavras existem;
+  # - Mostrar a palavra mais longa;
+  # - Mostrar a palavra que mais aparece.
+
 texto = input("Digite um texto: ")
-
 palavras = texto.split()
-qtd = len(palavras)
-mais_longa = max(palavras, key=len)
 
-# contar a mais repetida
-from collections import Counter
-contagem = Counter(palavras)
-mais_repetida = contagem.most_common(1)[0][0]
+quantidadePalavras = len(palavras)
 
-print("Quantidade de palavras:", qtd)
-print("Palavra mais longa:", mais_longa)
-print("Palavra que mais aparece:", mais_repetida)
+maisLonga = palavras[0]
+for p in palavras:
+    if len(p) > len(maisLonga):
+        maisLonga = p
+
+contagem = {}
+for p in palavras:
+    if p in contagem:
+        contagem[p] += 1
+    else:
+        contagem[p] = 1
+
+maisAparece = None
+maiorCcontagem = 0
+for p in contagem:
+    if contagem[p] > maiorContagem:
+        maiorContagem = contagem[p]
+        maisAparece = p
+
+print("Quantidade de palavras:", quantidadePalavras)
+print("Palavra mais longa:", maisLonga)
+print("Palavra que mais aparece:", maisAparece)
